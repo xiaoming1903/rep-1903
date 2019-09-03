@@ -1,0 +1,82 @@
+五张表的用法
+
+Shiro(权限管理的框架)
+ 认证--登录
+ 授权--某个用户能不能访问系统的某个资源进行某个操作
+
+用户 zs
+角色  超级管理员
+权限: 对emp表进行
+      增  emp:add
+      删  emp:del
+      改  emp:update
+      查  emp:query
+
+用户  ls
+角色  普通用户
+      
+
+
+入门教程
+https://blog.csdn.net/yq714588944/article/details/79337945
+
+数据库表设计
+  角色与权限
+
+编写角色与权限相关的持久层组件
+
+在web.xml中配置Shiro主过滤器
+
+在Spring主配置文件applicationContext配置两大组件
+a. 安全管理器
+b.Shiro过滤器
+     简介
+     https://blog.csdn.net/panchang199266/article/details/82534377
+     
+     
+  roles[a,b,c]，必须角色都符合才可以访问
+    perms[a,b]，必须全部拥有该权限才可以访问
+    port[a,b]，必须指定端口才可以访问！！
+    ####################################
+    anno：无权限访问
+    authc：需要认证才能访问
+    user：代表需要存在该用户对象才可访问
+    logout 登录退出才能被访问
+
+
+另外还要配置核心组件自定义Realm
+编写认证(登录)与授权(判断请求是否有权限访问资源)的核心业务
+
+另外还要配置Shiro生命周期bean,以及开启Shiro注解
+
+
+给员工管理系统添加基本的登录
+
+Shiro标签与注解的使用
+
+
+角色与权限使用五张表设计
+用户表
+用户角色表
+角色表
+角色权限表
+权限表
+
+密码加盐加密,完成注册功能
+https://blog.csdn.net/young_fee/article/details/79954477
+
+权限注解
+https://www.cnblogs.com/limingxian537423/p/7928234.html
+
+完成退出登录
+https://blog.csdn.net/feiteyizu123/article/details/84741595
+
+记住我
+https://blog.csdn.net/sihai12345/article/details/81170550
+
+
+无权限跳转
+https://blog.csdn.net/weixin_41092717/article/details/84792222
+
+
+
